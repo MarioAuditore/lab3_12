@@ -1,14 +1,14 @@
 #pragma once
 #include <iostream>
-#include <typeinfo>//определяем тип переменной
+#include <typeinfo>//РѕРїСЂРµРґРµР»СЏРµРј С‚РёРї РїРµСЂРµРјРµРЅРЅРѕР№
 
 template <class Type>
 class Stack
 {
 private:
-  Type* arr;    // ссылка на первый элемент массива
-  int top; // индекс верхнего эелемента стека
-  int max; //максимальный размер стека, задающийся пользователем
+  Type* arr;    // СЃСЃС‹Р»РєР° РЅР° РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ РјР°СЃСЃРёРІР°
+  int top; // РёРЅРґРµРєСЃ РІРµСЂС…РЅРµРіРѕ СЌРµР»РµРјРµРЅС‚Р° СЃС‚РµРєР°
+  int max; //РјР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЂР°Р·РјРµСЂ СЃС‚РµРєР°, Р·Р°РґР°СЋС‰РёР№СЃСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј
 public:
 
   Stack()
@@ -16,7 +16,7 @@ public:
     std::cout << "Creating Stack of " << typeid(arr).name() << " with default settings" << std::endl;
     top = -1;
     max = 10;
-    arr = new Type[10];// по умолчанию будет десять
+    arr = new Type[10];// РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ Р±СѓРґРµС‚ РґРµСЃСЏС‚СЊ
   };
 
   Stack(int n)
@@ -36,7 +36,7 @@ public:
   { 
     std::cout << "Destructor of stack of " << typeid(arr).name() << " type began" << std::endl;
     std::cout << *this << std::endl;
-    if (arr!=nullptr)//если не ноль
+    if (arr!=nullptr)//РµСЃР»Рё РЅРµ РЅРѕР»СЊ
     {
       delete[]arr;
       arr = nullptr;
@@ -47,28 +47,28 @@ public:
   bool isempty()
   {
     std::cout << "Checking if Stack is empty" << std::endl;
-    return top == -1;//если индекс верхнего элемента ноль, то стек пуст
-  };//проверка на пустоту
+    return top == -1;//РµСЃР»Рё РёРЅРґРµРєСЃ РІРµСЂС…РЅРµРіРѕ СЌР»РµРјРµРЅС‚Р° РЅРѕР»СЊ, С‚Рѕ СЃС‚РµРє РїСѓСЃС‚
+  };//РїСЂРѕРІРµСЂРєР° РЅР° РїСѓСЃС‚РѕС‚Сѓ
 
   int push(const Type& item)
   {
     if (top < max)
     {
-      ++top;//теперь сверху другой элемент
+      ++top;//С‚РµРїРµСЂСЊ СЃРІРµСЂС…Сѓ РґСЂСѓРіРѕР№ СЌР»РµРјРµРЅС‚
       arr[top] = item;
       return 0;
     }
     else
       std::cout << "Stack is full - message from int Stack push " << std::endl;
     return 0;
-  }; // добавление в стек
+  }; // РґРѕР±Р°РІР»РµРЅРёРµ РІ СЃС‚РµРє
 
   bool del(int n)
   {
     if (n > max)
     {
       std::cout << "Stack is smaller than " << n << std::endl;
-      return false;//удаления не произошло
+      return false;//СѓРґР°Р»РµРЅРёСЏ РЅРµ РїСЂРѕРёР·РѕС€Р»Рѕ
     }
     else {
       if ((max == 1) && (n == 0))
@@ -82,28 +82,28 @@ public:
     {
       if (i != max - 1)
       {
-        arr[i] = arr[i + 1];//делаем сдвиг
+        arr[i] = arr[i + 1];//РґРµР»Р°РµРј СЃРґРІРёРі
       }
     }
-      --max; --top;//уменшаем массив
-      Type* temp = new Type[max];//создаем массив на 1 элемент меньше
+      --max; --top;//СѓРјРµРЅС€Р°РµРј РјР°СЃСЃРёРІ
+      Type* temp = new Type[max];//СЃРѕР·РґР°РµРј РјР°СЃСЃРёРІ РЅР° 1 СЌР»РµРјРµРЅС‚ РјРµРЅСЊС€Рµ
       for (int i = 0; i < max; i++)
       {
-        temp[i] = arr[i];//запоминаем в новом массиве элементы
+        temp[i] = arr[i];//Р·Р°РїРѕРјРёРЅР°РµРј РІ РЅРѕРІРѕРј РјР°СЃСЃРёРІРµ СЌР»РµРјРµРЅС‚С‹
       }
-      delete[] arr; //удаляем старый массив
-      arr = temp;//переобозначаем
-      temp = nullptr;//избавляемся от временного указателя
+      delete[] arr; //СѓРґР°Р»СЏРµРј СЃС‚Р°СЂС‹Р№ РјР°СЃСЃРёРІ
+      arr = temp;//РїРµСЂРµРѕР±РѕР·РЅР°С‡Р°РµРј
+      temp = nullptr;//РёР·Р±Р°РІР»СЏРµРјСЃСЏ РѕС‚ РІСЂРµРјРµРЅРЅРѕРіРѕ СѓРєР°Р·Р°С‚РµР»СЏ
       return true;
-  };  // удаление элемента из стека
+  };  // СѓРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РёР· СЃС‚РµРєР°
 
   Type& top_of()
   {
     Type& temp = arr[top];
     return temp;
-  };   //определение верхнего элемента
+  };   //РѕРїСЂРµРґРµР»РµРЅРёРµ РІРµСЂС…РЅРµРіРѕ СЌР»РµРјРµРЅС‚Р°
 
-  int size() {//размер стека - это индекс верхнего элемента + 1
+  int size() {//СЂР°Р·РјРµСЂ СЃС‚РµРєР° - СЌС‚Рѕ РёРЅРґРµРєСЃ РІРµСЂС…РЅРµРіРѕ СЌР»РµРјРµРЅС‚Р° + 1
     return top + 1;
   };
 
@@ -113,20 +113,20 @@ public:
     {
       std::cout << "Now deleting top element of stack:" << arr[top] << std::endl;
       --max; --top;
-      Type* temp = new Type[max];//создаем массив длины меньшей на один элемент, как бы realloc
+      Type* temp = new Type[max];//СЃРѕР·РґР°РµРј РјР°СЃСЃРёРІ РґР»РёРЅС‹ РјРµРЅСЊС€РµР№ РЅР° РѕРґРёРЅ СЌР»РµРјРµРЅС‚, РєР°Рє Р±С‹ realloc
       for (int i = 0; i < max; i++)
       {
         temp[i] = arr[i];
       }
-      delete[] arr;//освобождаем старый массив
-      arr = temp;//присваиваем укороченный массив
-      temp = nullptr;//освобождаем указатель
+      delete[] arr;//РѕСЃРІРѕР±РѕР¶РґР°РµРј СЃС‚Р°СЂС‹Р№ РјР°СЃСЃРёРІ
+      arr = temp;//РїСЂРёСЃРІР°РёРІР°РµРј СѓРєРѕСЂРѕС‡РµРЅРЅС‹Р№ РјР°СЃСЃРёРІ
+      temp = nullptr;//РѕСЃРІРѕР±РѕР¶РґР°РµРј СѓРєР°Р·Р°С‚РµР»СЊ
       return true;
     }
     else
       std::cout << "Top is the only element left, quiting pop operation" << std::endl;
       return false;
-  };//классическое удаление верхнего элемента
+  };//РєР»Р°СЃСЃРёС‡РµСЃРєРѕРµ СѓРґР°Р»РµРЅРёРµ РІРµСЂС…РЅРµРіРѕ СЌР»РµРјРµРЅС‚Р°
 
   const Stack<Type>& operator=(const Stack<Type>& object)
   {
@@ -134,9 +134,9 @@ public:
     {
       return *this;
     }
-    delete[] arr;//удаляем старый массив
+    delete[] arr;//СѓРґР°Р»СЏРµРј СЃС‚Р°СЂС‹Р№ РјР°СЃСЃРёРІ
     max = object.max;
-    arr = new Type[max];//выделяем память отдельно для нового массива, чтобы не зависеть от массива object
+    arr = new Type[max];//РІС‹РґРµР»СЏРµРј РїР°РјСЏС‚СЊ РѕС‚РґРµР»СЊРЅРѕ РґР»СЏ РЅРѕРІРѕРіРѕ РјР°СЃСЃРёРІР°, С‡С‚РѕР±С‹ РЅРµ Р·Р°РІРёСЃРµС‚СЊ РѕС‚ РјР°СЃСЃРёРІР° object
     for (int i = 0; i < max; i++)
     {
       ++top;
@@ -146,7 +146,7 @@ public:
     return *this;
   }
 
-  friend std::ostream& operator<< (std::ostream& os, const Stack<Type>& object) //вывод
+  friend std::ostream& operator<< (std::ostream& os, const Stack<Type>& object) //РІС‹РІРѕРґ
   {
     os << "Content of Stack:" << std::endl;
     for (int i = 0; i <= object.top; i++)
@@ -156,10 +156,10 @@ public:
     return os;
   };
 
-  friend std::istream& operator >> (std::istream& is, Stack<Type>& object) {//ввод
+  friend std::istream& operator >> (std::istream& is, Stack<Type>& object) {//РІРІРѕРґ
     Type x;
     is >> x;
     object.push(x);
     return is;
   }
-};
+};//made by E.Sabitov
