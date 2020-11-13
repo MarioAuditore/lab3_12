@@ -13,11 +13,11 @@ public:
   explicit Pair(int int1, double double2){
     cout << "Creating a pair "<< int1 << ":"<< double2 << endl; 
     SetData(int1,double2);
-  }//конструктор с параметрами
+  }//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 
-  Pair() { SetData(0, 0); }//конструктор по умолчанию
+  Pair() { SetData(0, 0); }//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
   ~Pair() { cout << "Deleting pair"<<endl; }
-  void print()//вывод пары с двоеточием
+  void print()//РІС‹РІРѕРґ РїР°СЂС‹ СЃ РґРІРѕРµС‚РѕС‡РёРµРј
   {
     cout << a << ":" << b << endl;
   }
@@ -28,7 +28,7 @@ public:
     b = b_in;
   }
 
-  const Pair& operator=(const Pair& object)//оператор присваивания
+  const Pair& operator=(const Pair& object)//РѕРїРµСЂР°С‚РѕСЂ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
   {
     if (this == &object)
     {
@@ -49,4 +49,4 @@ public:
     os << "Pair of int and double - " << object.a << ":" << object.b << endl;
     return os;
   }
-};
+};//made by E.Sabitov
