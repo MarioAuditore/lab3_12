@@ -21,15 +21,15 @@ int main()
     cin >> n_stack;
     Stack<int> st_int(n_stack);
 
-    for (int i = 0; i < n_stack; i++)//ввод
+    for (int i = 0; i < n_stack; i++)//РІРІРѕРґ
     {
       cout << "arr[" << i << "] = ";
       cin >> st_int;
     }
 
-    cout << st_int << endl;//вывод
+    cout << st_int << endl;//РІС‹РІРѕРґ
 
-    if (st_int.isempty())//проверка на пустоту
+    if (st_int.isempty())//РїСЂРѕРІРµСЂРєР° РЅР° РїСѓСЃС‚РѕС‚Сѓ
     {
       cout << "Stack is empty" << endl;
     }
@@ -40,14 +40,14 @@ int main()
 
     cout << "Enter number of element you want to delete n <= " << n_stack - 1 << endl;
     cin >> del_stack;
-    while (!(st_int.del(del_stack)))//удаление элемента
+    while (!(st_int.del(del_stack)))//СѓРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
     {
       cout << "Enter number of element you want to delete n <= " << n_stack - 1 << endl;
       cin >> del_stack;
     };
-    cout << st_int;//вывод измененного стека
+    cout << st_int;//РІС‹РІРѕРґ РёР·РјРµРЅРµРЅРЅРѕРіРѕ СЃС‚РµРєР°
 
-    cout << "Current size of the stack is " << st_int.size() << ". Previous was " << n_stack << endl;//вывод размера
+    cout << "Current size of the stack is " << st_int.size() << ". Previous was " << n_stack << endl;//РІС‹РІРѕРґ СЂР°Р·РјРµСЂР°
 
     cout << "Top of the stack is " << st_int.top_of() << endl;
 
@@ -60,27 +60,27 @@ int main()
 
 //    st_int = st_int;
 
-    Stack<int> st_type2_int(n_stack);//демонстрация присваивания
+    Stack<int> st_type2_int(n_stack);//РґРµРјРѕРЅСЃС‚СЂР°С†РёСЏ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
     st_type2_int = st_int;
-    cout << st_type2_int;//вывод
+    cout << st_type2_int;//РІС‹РІРѕРґ
 
      //______________________________________________________________________________________________________
     cout << "_________________________________________________________________________________________________________" << endl;
-    //теперь double
+    //С‚РµРїРµСЂСЊ double
 
     cout << "Enter amount of mumbers you want your double stack to store" << endl;
     cin >> n_stack;
     Stack<double> st_double(n_stack);
 
-    for (int i = 0; i < n_stack; i++)//ввод
+    for (int i = 0; i < n_stack; i++)//РІРІРѕРґ
     {
       cout << "arr[" << i << "] = ";
       cin >> st_double;
     }
 
-    cout << st_double << endl;//вывод
+    cout << st_double << endl;//РІС‹РІРѕРґ
 
-    if (st_double.isempty())//проверка на пустоту
+    if (st_double.isempty())//РїСЂРѕРІРµСЂРєР° РЅР° РїСѓСЃС‚РѕС‚Сѓ
     {
       cout << "Stack is empty" << endl;
     }
@@ -91,40 +91,40 @@ int main()
 
     cout << "Enter number of element you want to delete n <= " << n_stack - 1 << endl;
     cin >> del_stack;
-    while (!(st_double.del(del_stack)))//удаление элемента
+    while (!(st_double.del(del_stack)))//СѓРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
     {
       cout << "Enter number of element you want to delete n <= " << n_stack - 1 << endl;
       cin >> del_stack;
     };
-    cout << st_double;//вывод измененного стека
+    cout << st_double;//РІС‹РІРѕРґ РёР·РјРµРЅРµРЅРЅРѕРіРѕ СЃС‚РµРєР°
 
-    cout << "Current size of the stack is " << st_double.size() << ". Previous was " << n_stack << endl;//вывод размера
+    cout << "Current size of the stack is " << st_double.size() << ". Previous was " << n_stack << endl;//РІС‹РІРѕРґ СЂР°Р·РјРµСЂР°
 
     cout << "Top of the stack is " << st_double.top_of() << endl;
 
     st_double.pop();
     cout << "Current top of the stack is " << st_double.top_of() << endl;
 
-    Stack<double> st_type2_double(n_stack);//демонстрация присваивания
+    Stack<double> st_type2_double(n_stack);//РґРµРјРѕРЅСЃС‚СЂР°С†РёСЏ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
     st_type2_double = st_double;
-    cout << st_type2_double;//вывод
+    cout << st_type2_double;//РІС‹РІРѕРґ
     //______________________________________________________________________________________________________
     cout << "_________________________________________________________________________________________________________" << endl;
-    //теперь float
+    //С‚РµРїРµСЂСЊ float
 
     cout << "Enter amount of mumbers you want your float stack to store" << endl;
     cin >> n_stack;
     Stack<float> st_float(n_stack);
 
-    for (int i = 0; i < n_stack; i++)//ввод
+    for (int i = 0; i < n_stack; i++)//РІРІРѕРґ
     {
       cout << "arr[" << i << "] = ";
       cin >> st_float;
     }
 
-    cout << st_float << endl;//вывод
+    cout << st_float << endl;//РІС‹РІРѕРґ
 
-    if (st_float.isempty())//проверка на пустоту
+    if (st_float.isempty())//РїСЂРѕРІРµСЂРєР° РЅР° РїСѓСЃС‚РѕС‚Сѓ
     {
       cout << "Stack is empty" << endl;
     }
@@ -135,23 +135,23 @@ int main()
 
     cout << "Enter number of element you want to delete n <= " << n_stack - 1 << endl;
     cin >> del_stack;
-    while (!(st_float.del(del_stack)))//удаление элемента
+    while (!(st_float.del(del_stack)))//СѓРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
     {
       cout << "Enter number of element you want to delete n <= " << n_stack - 1 << endl;
       cin >> del_stack;
     };
-    cout << st_float;//вывод измененного стека
+    cout << st_float;//РІС‹РІРѕРґ РёР·РјРµРЅРµРЅРЅРѕРіРѕ СЃС‚РµРєР°
 
-    cout << "Current size of the stack is " << st_float.size() << ". Previous was " << n_stack << endl;//вывод размера
+    cout << "Current size of the stack is " << st_float.size() << ". Previous was " << n_stack << endl;//РІС‹РІРѕРґ СЂР°Р·РјРµСЂР°
 
     cout << "Top of the stack is " << st_float.top_of() << endl;
 
     st_float.pop();
     cout << "Current top of the stack is " << st_float.top_of() << endl;
 
-    Stack<float> st_type2_float(n_stack);//демонстрация присваивания
+    Stack<float> st_type2_float(n_stack);//РґРµРјРѕРЅСЃС‚СЂР°С†РёСЏ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
     st_type2_float = st_float;
-    cout << st_type2_float;//вывод
+    cout << st_type2_float;//РІС‹РІРѕРґ
 
     break;
   }
@@ -162,15 +162,15 @@ int main()
     cin >> n_stack;
     Stack<Pair> st_pair(n_stack);
 
-    for (int i = 0; i < n_stack; i++)//ввод
+    for (int i = 0; i < n_stack; i++)//РІРІРѕРґ
     {
       cout << "arr[" << i << "] = ";
       cin >> st_pair;
     }
 
-    cout << st_pair << endl;//вывод
+    cout << st_pair << endl;//РІС‹РІРѕРґ
 
-    if (st_pair.isempty())//проверка на пустоту
+    if (st_pair.isempty())//РїСЂРѕРІРµСЂРєР° РЅР° РїСѓСЃС‚РѕС‚Сѓ
     {
       cout << "Stack is empty" << endl;
     }
@@ -181,14 +181,14 @@ int main()
 
     cout << "Enter number of element you want to delete n <= " << n_stack - 1 << endl;
     cin >> del_stack;
-    while (!(st_pair.del(del_stack)) and (st_pair.getMax()!=1))//удаление элемента
+    while (!(st_pair.del(del_stack)) and (st_pair.getMax()!=1))//СѓРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
     {
       cout << "Enter number of element you want to delete n <= " << n_stack - 1 << endl;
       cin >> del_stack;
     };
-    cout << st_pair;//вывод измененного стека
+    cout << st_pair;//РІС‹РІРѕРґ РёР·РјРµРЅРµРЅРЅРѕРіРѕ СЃС‚РµРєР°
 
-    cout << "Current size of the stack is " << st_pair.size() << ". Previous was " << n_stack << endl;//вывод размера
+    cout << "Current size of the stack is " << st_pair.size() << ". Previous was " << n_stack << endl;//РІС‹РІРѕРґ СЂР°Р·РјРµСЂР°
 
     cout << "Top of the stack is " << st_pair.top_of() << endl;
 
@@ -200,11 +200,11 @@ int main()
     cout << st_pair;
 
      
-    Stack<Pair> st_type2_pair(n_stack);//демонстрация присваивания
+    Stack<Pair> st_type2_pair(n_stack);//РґРµРјРѕРЅСЃС‚СЂР°С†РёСЏ РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
     st_type2_pair = st_pair;
-    cout << st_type2_pair;//вывод
+    cout << st_type2_pair;//РІС‹РІРѕРґ
   }
   }
-  
+  //made by E.Sabitov
   return 0;
 }
